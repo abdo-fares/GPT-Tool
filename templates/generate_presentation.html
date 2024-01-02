@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Generate Presentation</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #ffffff;
+            color: #577a94;
+            line-height: 1.6;
+        }
+
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+            padding: 20px;
+
+        }
+
+        header {
+            position: relative;
+            background: #fff;
+            color: #577a94;
+            padding-top: 30px;
+            min-height: 70px;
+            border-bottom: #96173e 3px solid;
+        }
+
+        header h1 {
+            margin: 0;
+            padding-bottom: 15px;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .form-group input[type="text"],
+        .form-group input[type="file"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        input[type="submit"] {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            margin-top: 20px;
+            background-color:#96173e;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #577a94;
+        }
+        #logo {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+#logo img {
+    width: 200px; /* Adjust as needed */
+    height: auto;
+}
+    </style>
+</head>
+<body>
+
+   <header>
+    <div class="container">
+        <div id="branding">
+            <h1>Präsentations Zusammenfasser</h1>
+        </div>
+        <div id="logo">
+            <img src="https://www.internet-sicherheit.de/wp-content/uploads/2022/08/csm_ifis-logo_977fe1fd11.png" alt="Logo">
+        </div>
+    </div>
+</header>
+
+    <div class="container">
+        <h2>PDF hochladen und Details eingeben</h2>
+        <form action="/generate_presentation" method="POST" enctype="multipart/form-data">
+            <div class="form-group">
+                <label for="pdf_file">PDF hochladen:</label>
+                <input type="file" name="pdf_file" id="pdf_file" accept="application/pdf" required>
+            </div>
+            <div class="form-group">
+                <label for="keywords">schlüsselworte:</label>
+                <input type="text" name="keywords" id="keywords" >
+            </div>
+            <div class="form-group">
+                <label for="question">weitere Informationen:</label>
+                <input type="text" name="question" id="question">
+            </div>
+             <div class="form-group">
+                <label for="photo_file">photo Beschreibung :</label>
+                <input type="text" name="pdf_file" id="photo_file" required>
+            </div>
+            <input type="submit" value="Generate Presentation">
+        </form>
+    </div>
+</body>
+</html>
